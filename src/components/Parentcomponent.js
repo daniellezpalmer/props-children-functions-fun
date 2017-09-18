@@ -1,35 +1,4 @@
-import React, { Component } from 'react';
-import '../styles/App.css';
-
-
-class Header extends Component {
-  render() {
-    return (
-      <nav>I am the Navigation Bar</nav>
-    );
-  }
-}
-
-class Footer extends Component {
-  render() {
-    return (
-      <footer>I am the Footer</footer>
-    );
-  }
-}
-
-class BaseLayout extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Footer />
-      </div>
-    );
-  }
-}
-
-class ParentComponent extends Component {
+default export class ParentComponent extends Component {
   constructor(props){
     super(props);
 
@@ -76,7 +45,7 @@ this.handleSubmit = this.handleSubmit.bind(this)
   }
 }
 
-class ChildComponent extends Component {
+default export class ChildComponent extends Component {
   render() {
     return (
       <div>
@@ -87,27 +56,3 @@ class ChildComponent extends Component {
     );
   }
 }
-
-class DisplayComponent extends Component {
-  render() {
-    return (
-      <div>{this.props.sayWhat}</div>
-    );
-  }
-}
-
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <BaseLayout></BaseLayout>
-        <Header />
-        <ParentComponent />
-        <Footer />
-      </div>
-    );
-  }
-}
-
-export default App;
