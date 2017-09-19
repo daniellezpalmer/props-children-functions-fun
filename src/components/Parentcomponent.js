@@ -1,4 +1,8 @@
-default export class ParentComponent extends Component {
+import React, {Component} from 'react';
+import ChildComponent from '../components/Childcomponent.js';
+import DisplayComponent from '../components/Displaycomponent.js';
+
+export default class ParentComponent extends Component {
   constructor(props){
     super(props);
 
@@ -40,18 +44,6 @@ this.handleSubmit = this.handleSubmit.bind(this)
           <ChildComponent onClick={this.handleSubmit}/>
         </form>
       <DisplayComponent sayWhat={this.state.whatWasSaid}/>
-      </div>
-    );
-  }
-}
-
-default export class ChildComponent extends Component {
-  render() {
-    return (
-      <div>
-        <div>
-          <input type="submit" onClick={this.props.onClick}/>
-        </div>
       </div>
     );
   }
